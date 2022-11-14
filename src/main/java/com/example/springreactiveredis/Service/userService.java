@@ -28,8 +28,4 @@ public class userService {
     public Mono<user> updateUserInDb(String id, Mono<user> u){
         return u.flatMap(i -> this.userDb.fastPut(id, i).thenReturn(i));
     }
-
-//    public Mono<user> deleteUserInDb(String id, Mono<user> u){
-//        return this.userDb.delete(id);
-//    }
 }
